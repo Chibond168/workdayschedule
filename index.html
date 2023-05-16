@@ -26,49 +26,94 @@
     <main>
       <section class="jumbotron">
         <h1 class="title">Work Day Planner</h1>
-        <p id="1a" class="answer"></p>
+        <p id="todate" class="showday"></p>
       </section>
       <section>
-        <div class="calendar-container">
-          <div class="item1">5AM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">6AM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">7AM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">8AM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">9AM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">10AM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">11AM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">12PM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">1PM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">2PM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">3PM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">4PM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
-          <div class="item1">5PM</div>
-          <div class="item2"></div>
-          <div class="item3"></div>
+        <div class="calendar-container" id="container">
+          <div class="item1" id="hour5" data-index="5">5AM</div>
+          <textarea class="item2" id="schedule05" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton5">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour6" data-index="6">6AM</div>
+          <textarea class="item2" id="schedule06" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton6">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour7" data-index="7" >7AM</div>
+          <textarea class="item2" id="schedule07" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton7">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour8" data-index="8">8AM</div>
+          <textarea class="item2" id="schedule08" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton8">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour9" data-index="9">9AM</div>
+          <textarea class="item2" id="schedule09" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton9">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour10" data-index="10">10AM</div>
+          <textarea class="item2" id="schedule10" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton10">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour11" data-index="11">11AM</div>
+          <textarea class="item2" id="schedule11" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton11">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour12" data-index="12">12PM</div>
+          <textarea class="item2" id="schedule12" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton12">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour13" data-index="13">1PM</div>
+          <textarea class="item2" id="schedule13" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton13">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour14" data-index="14">2PM</div>
+          <textarea class="item2" id="schedule14" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton14">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour15" data-index="15">3PM</div>
+          <textarea class="item2" id="schedule15" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton15">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour16" data-index="16">4PM</div>
+          <textarea class="item2" id="schedule16" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton16">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour17" data-index="17">5PM</div>
+          <textarea class="item2" id="schedule17" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton17">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
+          <div class="item1" id="hour18" data-index="18">6PM</div>
+          <textarea class="item2" id="schedule18" rows="4" cols="50">
+          </textarea>
+          <button class="item3 image-button img" id="savebutton18">
+            <img src="../workdayschedule/assets/image/save-icon.png" alt="Image">
+          </button>
         </div>  
       </section>
     </main>

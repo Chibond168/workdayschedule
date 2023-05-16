@@ -1,21 +1,67 @@
 // Use Day.js to format the following variables:
-// 1. What is today's date in the following format: Jan 1st, 1999?
 var today = dayjs();
-$('#1a').text(today.format('MMM D, YYYY'));
 
-// 2. What is the day of the week today?
-var dayWeek = today.format('[Today is] dddd');
-$('#2a').text(dayWeek);
 
-// 3. Parse the following date, 11/3/2020, and convert it into the following format: Sunday, February 14 2010, 3:25:50 pm.
-var reformatDate = dayjs('2020-11-03').format('dddd, MMMM D YYYY, h:mm:ss a');
-$('#3a').text(reformatDate);
+/*if (myhour > 20)
+[
+    $('#schedule05').css({ 'background-color': '#60abce', color: '#aeaeae' })
 
-// 4. I need to place my recycling bin on the curb on every odd week of the year for collection. Do I need to put out my recycling bin out this week?
-// Dayjs' .diff() method does NOT include partial weeks in its calculation.
-var beginningOfYear = dayjs('2022-01-01');
-var weekNum = today.diff(beginningOfYear, 'week');
+] */
 
-// Check for odd week, then assign boolean to variable
-var takeOut = weekNum % 2 === 1;
-$('#4a').text(takeOut + ", because it's currently week " + weekNum);
+//$(document).ready(function(){
+   // $("#container").children("textarea.item2").css({'background-color': '#60abce',});
+    /* console.log($('#container').children("textarea.item2").prop('textContent')); */
+   // console.log($('#container').children("textarea.item2").attr('id'));
+
+
+    /* $("#container").children("textarea.item2").prop('disabled', true); */
+ // });
+  
+  
+
+ /* $('textarea').each(function(index) {
+    console.log(index + ':' + $(this).text());
+  }); */
+
+/*console.log($('#schedule05').attr('id'));
+console.log($('#container').children(0).attr('textContent'));
+console.log($('#container').children(1).attr('textContent'));
+console.log($('#container').children(2).attr('textContent'));
+console.log($('#container').children().length); */
+/*console.log($('#container').children(4).prop('textContent')); */
+/*console.log($('#container').children("div.item1").prop('textContent'));*/
+/*console.log($('#container').find("#hour")); */
+
+// This function is being called below and will run when the page loads.
+function init() {
+    $('#todate').text(today.format('MMM D, YYYY'));
+  
+    // This is a helper function that will render todos to the DOM
+    rendorGrid();
+  }
+
+function rendorGrid()
+{
+    var itm2= $('.item2');
+    var myhour = dayjs().hour();
+
+    for (var i = 0; i < itm2.length; i++) {
+      // Using $() to re-wrap the element.
+      var itmname = $(itm2[i]).attr('id');
+      var fieldnum = itmname.substr(8);
+      if (myhour == fieldnum)
+      {
+          var fieldlabel = "#" + itmname;
+          $(fieldlabel).css({ 'background-color': '#e45252', color: '#aeaeae' });
+      }
+       else if (myhour > fieldnum)
+      {
+          var fieldlabel = "#" + itmname;
+          $(fieldlabel).css({ 'background-color': '#60abce', color: '#aeaeae' });
+  
+          $(fieldlabel).prop('disabled', true)
+      }
+   }  
+}
+
+init();
