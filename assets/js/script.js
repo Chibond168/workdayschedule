@@ -25,13 +25,26 @@ function init() {
 
 function rendorGrid()
 {
-    var itm2= $('.item2');
+    var itm2 = $('.item2');
+    var buttonitm = $('.item3');
     var myhour = dayjs().hour();
+
+    //var workschedulecontent = JSON.parse(localStorage.getItem("workschedule"));
+    //for (var i = 0; i < workschedulecontent.length; i++) {
+     //   var todo = workschedulecontent[i];
+     //   var dolist = todo.split(",");
+    
+
+      //}
+
+
 
     for (var i = 0; i < itm2.length; i++) {
       // Using $() to re-wrap the element.
       var itmname = $(itm2[i]).attr('id');
       var fieldnum = itmname.substr(8);
+      var butitmname = $(buttonitm[i]).attr('id');
+
       if (myhour == fieldnum)
       {
           var fieldlabel = "#" + itmname;
@@ -43,6 +56,9 @@ function rendorGrid()
           $(fieldlabel).css({ 'background-color': '#60abce', color: '#aeaeae' });
   
           //$(fieldlabel).prop('disabled', true)
+          var butfiledlabel = "#" + butitmname;
+          //$(butfiledlabel).hide();
+          $(butfiledlabel).prop('disabled', true)
       }
       else{
         var fieldlabel = "#" + itmname;
@@ -64,11 +80,11 @@ button5.on('click', function () {
     var txt = $("#schedule05").val();
     if (txt.trim() === "")
     {
-        populateEvent("",null); 
+        populateEvent("#schedule05",null); 
     }
     else
     {
-        populateEvent("",txt);
+        populateEvent("#schedule05",txt);
     }
     //rendorGrid();
    
