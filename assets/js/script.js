@@ -12,9 +12,11 @@ var button15 = $('#savebutton15');
 var button16 = $('#savebutton16');
 var button17 = $('#savebutton17');
 var button18 = $('#savebutton18');
+var answemsg = $('#answer-message');
 
 // This function is being called below and will run when the page loads.
 function init() {
+    $('#answer-message').hide();
     $('#todate').text(today.format('dddd MMM D, YYYY'));
   
     // This is a helper function that will render todos to the DOM
@@ -101,16 +103,8 @@ function populateEvent(parseitem, parsevalue)
             
             localStorage.setItem("workschedule", JSON.stringify(workschedulecontent));
        }
+       $('#answer-message').show();
     }
-
-    $(function() {  
-        $( "#dialog-1" ).dialog({  
-           autoOpen: false,    
-        });  
-        $( "#opener" ).click(function() {  
-           $( "#dialog-1" ).dialog( "open" );  
-        });  
-     });  
 }
 
 button7.on('click', function () {
