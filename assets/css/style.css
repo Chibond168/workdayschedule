@@ -195,28 +195,6 @@ button {
   margin: 0;
 }
 
-.container {
-  width: 85%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* col-md */
-@media screen and (min-width: 768px) {
-  
-}
-
-/* col-lg */
-@media screen and (min-width: 992px) {
-  
-}
-
-/* col-xl */
-@media screen and (min-width: 1200px) {
-  
-}
-
 /* Custom Styles */
 body {
   background-color: rgb(74, 74, 72);
@@ -270,11 +248,6 @@ section {
 
 .item3 {
   grid-column: 3 / 3 ;
-}
-
-.changecolor {
-  background-color: #60abce;
-  color: #aeaeae;
 }
 
 .image-button {

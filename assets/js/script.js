@@ -12,11 +12,10 @@ var button15 = $('#savebutton15');
 var button16 = $('#savebutton16');
 var button17 = $('#savebutton17');
 var button18 = $('#savebutton18');
-var answemsg = $('#answer-message');
 
 // This function is being called below and will run when the page loads.
 function init() {
-    $('#answer-message').hide();
+    $('#event-message').hide();
     $('#todate').text(today.format('dddd MMM D, YYYY'));
   
     // This is a helper function that will render todos to the DOM
@@ -65,23 +64,23 @@ function rendorGrid()
       if (myhour == fieldnum)
       {
           var fieldlabel = "#" + itmname;
-          $(fieldlabel).css({ 'background-color': '#e45252', color: '#aeaeae' });
+          $(fieldlabel).css({ 'background-color': '#e45252', color: '#020202' });
       }
        else if (myhour > fieldnum)
       {
           var fieldlabel = "#" + itmname;
-          $(fieldlabel).css({ 'background-color': '#60abce', color: '#aeaeae' });
-  
+          $(fieldlabel).css({ 'background-color': '#60abce', color: '#fff' });
+ 
           $(fieldlabel).prop('disabled', true)
           var butfiledlabel = "#" + butitmname;
-          //$(butfiledlabel).hide();
           $(butfiledlabel).prop('disabled', true)
       }
       else{
         var fieldlabel = "#" + itmname;
-          $(fieldlabel).css({ 'background-color': '#446d4e', color: '#aeaeae' });
+          $(fieldlabel).css({ 'background-color': '#446d4e', color: '#793f3f' });
       }
    }  
+   $('#event-message').hide(3000);
 }
 
 function populateEvent(parseitem, parsevalue)
@@ -103,7 +102,7 @@ function populateEvent(parseitem, parsevalue)
             
             localStorage.setItem("workschedule", JSON.stringify(workschedulecontent));
        }
-       $('#answer-message').show();
+       $('#event-message').show();
     }
 }
 
