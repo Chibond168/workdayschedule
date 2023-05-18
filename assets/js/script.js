@@ -1,5 +1,6 @@
 // Use Day.js to format the following variables:
 var today = dayjs();
+// Save buttons foreach work hour
 var button7 = $('#savebutton7');
 var button8 = $('#savebutton8');
 var button9 = $('#savebutton9');
@@ -22,13 +23,16 @@ function init() {
     rendorGrid();
   }
 
+  // Populate the Grid
 function rendorGrid()
 {
     var itm2 = $('.item2');
     var buttonitm = $('.item3');
     var myhour = dayjs().hour();
 
+    // Retrieve data from local storage
     var schedulelist = JSON.parse(localStorage.getItem("workschedule"));
+    //if no data in local storage, create one
     if (schedulelist == null)
     {
         var workschedulecontent = ["#schedule07| ", "#schedule08| ", "#schedule09| ", "#schedule10| ", "#schedule11| ", "#schedule12| ", "#schedule13| ", "#schedule14| ", "#schedule15| ", "#schedule16| ", "#schedule17| ", "#schedule18| "];
@@ -40,6 +44,7 @@ function rendorGrid()
         workschedulecontent = schedulelist;
     }
 
+    // loop thru the content of the stored data
     for (var i = 0; i < workschedulecontent.length; i++) {
         var todo = workschedulecontent[i];
         var dolist = todo.split("|");
@@ -61,12 +66,13 @@ function rendorGrid()
       var fieldnum = itmname.substr(8);
       var butitmname = $(buttonitm[i]).attr('id');
 
+      // current hour
       if (myhour == fieldnum)
       {
           var fieldlabel = "#" + itmname;
           $(fieldlabel).css({ 'background-color': '#e45252', color: '#020202' });
       }
-       else if (myhour > fieldnum)
+       else if (myhour > fieldnum)  //past hours
       {
           var fieldlabel = "#" + itmname;
           $(fieldlabel).css({ 'background-color': '#60abce', color: '#fff' });
@@ -75,14 +81,18 @@ function rendorGrid()
           var butfiledlabel = "#" + butitmname;
           $(butfiledlabel).prop('disabled', true)
       }
-      else{
+      else{ 
+        // future hour
         var fieldlabel = "#" + itmname;
-          $(fieldlabel).css({ 'background-color': '#446d4e', color: '#793f3f' });
+          $(fieldlabel).css({ 'background-color': '#5d7363', color: '#793f3f' });
       }
    }  
+
+   // hide the message - Event is stored in local storage
    $('#event-message').hide(3000);
 }
 
+// populate the event and store it to local storage
 function populateEvent(parseitem, parsevalue)
 {
     var workschedulecontent = JSON.parse(localStorage.getItem("workschedule"));
@@ -100,12 +110,15 @@ function populateEvent(parseitem, parsevalue)
                 workschedulecontent[i] = parseitem + "|" + parsevalue;
             }
             
+            // save data to local storage
             localStorage.setItem("workschedule", JSON.stringify(workschedulecontent));
        }
+       // show the message - Event is stored in local storage
        $('#event-message').show();
     }
 }
 
+// set up action when each button is clicked
 button7.on('click', function () {
     var txt = $("#schedule07").val();
     if (txt.trim() === "")
@@ -262,4 +275,5 @@ button18.on('click', function () {
     rendorGrid();
 });
 
+// initial step
 init();
